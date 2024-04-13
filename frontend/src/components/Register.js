@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import { FaUser } from 'react-icons/fa'
 import Styles from '../index.module.css'
+import {useSelector, useDispatch} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
+import {toast} from 'react-toastify'
+import {register, reset} from '../features/auth/authSlice'
 
 function Register () {
     const [formData, setFormData] = useState({ name: "", email: "", password: "", password2: "" })
-    const { name, email, password, password2 } = formData
+    const { name, email, password, password2 } = formData;
+
+
     
     const onChange = (e) => {
         setFormData((prevState) => (

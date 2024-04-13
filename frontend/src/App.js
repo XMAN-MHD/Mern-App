@@ -5,19 +5,25 @@ import  Login  from './components/Login'
 import  Register  from './components/Register'
 import Header from './components/Header';
 import Styles from './index.module.css'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/ReactToastify.css'
+
 
 function App() {
   return (
-    <Router>
-      <div className={Styles.Container}>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Dashboard />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
-      </div>  
-    </Router>
+    <>
+      <Router>
+        <div className={Styles.Container}>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Dashboard />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Routes>
+        </div>  
+      </Router>
+      <ToastContainer />
+    </>
   );
 }
 
